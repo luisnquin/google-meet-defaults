@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Google Meet with defaults</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+
+                letter-spacing: 0.0107142857em;
+
+                font-family: 'Google Sans Display', Roboto, Arial, sans-serif;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                margin: 1.5rem;
+                max-width: 35%;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                max-width: 90%;
+            }
+
+            .form-item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #submit-form {
+                background-color: #1a73e8;
+                color: #ecf3fd;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                border: none;
+                box-shadow: none;
+                border-radius: 4px;
+                min-height: 40px;
+
+                text-align: center;
+                font-weight: 500;
+                font-size: 1rem;
+
+                padding: 10px 0;
+                margin: auto;
+                width: 50%;
+            }
+
+            #submit-form:hover {
+                cursor: pointer;
+                background-color: #1e6fd9;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Google Meet with defaults</h1>
+
+        <!--
+            ! you can edit the HTML min attribute of the sizer input
+            https://www.svgrepo.com/svg/76243/save-icon?edit=true
+
+            https://www.w3schools.com/howto/howto_css_switch.asp
+        -->
+
+        <form>
+            <div class="form-item">
+                <label for="account-number">Account number:</label>
+                <input
+                    id="account-number"
+                    type="text"
+                    value="1"
+                    size="1"
+                    maxlength="2"
+                    pattern="\d{1,5}"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')"
+                />
+            </div>
+
+            <div class="form-item">
+                <label for="camera">Turn on camera:</label>
+                <input id="camera" type="checkbox" />
+            </div>
+
+            <div class="form-item">
+                <label for="microphone">Turn on microphone:</label>
+                <input id="microphone" type="checkbox" />
+            </div>
+
+            <button id="submit-form" type="submit">
+                <svg
+                    fill="#ecf3fd"
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="17px"
+                    height="17px"
+                    viewBox="0 0 407.10 407.10"
+                    xml:space="preserve"
+                    stroke="#ecf3fd"
+                    stroke-width="0.00407096"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <g>
+                                <path
+                                    d="M402.115,84.008L323.088,4.981C319.899,1.792,315.574,0,311.063,0H17.005C7.613,0,0,7.614,0,17.005v373.086 c0,9.392,7.613,17.005,17.005,17.005h373.086c9.392,0,17.005-7.613,17.005-17.005V96.032 C407.096,91.523,405.305,87.197,402.115,84.008z M300.664,163.567H67.129V38.862h233.535V163.567z"
+                                ></path>
+                                <path
+                                    d="M214.051,148.16h43.08c3.131,0,5.668-2.538,5.668-5.669V59.584c0-3.13-2.537-5.668-5.668-5.668h-43.08 c-3.131,0-5.668,2.538-5.668,5.668v82.907C208.383,145.622,210.92,148.16,214.051,148.16z"
+                                ></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                Save
+            </button>
+        </form>
+
+        <script type="text/javascript" src="/ui/index.js"></script>
+    </body>
+</html>
