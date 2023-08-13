@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "name": "Google Meet with some defaults",
+    "description": "Why didn't the Meet team ever fix those behaviors?",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["storage", "https://meet.google.com/*"],
+    "content_scripts": [
+        {
+            "js": ["src/interceptor.js"],
+            "matches": ["https://meet.google.com/*"],
+            "run_at": "document_start"
+        }
+    ],
+    "icons": {
+        "16": "src/assets/16.png",
+        "48": "src/assets/48.png",
+        "128": "src/assets/128.png"
+    },
+    "action": {
+        "default_popup": "src/ui/index.html",
+        "default_icon": {
+            "16": "src/assets/16.png",
+            "24": "src/assets/24.png",
+            "32": "src/assets/32.png"
+        }
+    }
+}
